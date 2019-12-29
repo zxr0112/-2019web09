@@ -1,0 +1,129 @@
+@charset "utf-8";
+:root {
+  --height: 100px;
+  --width: 200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.caidan {
+	float: inherit;
+  width: calc(4 * var(--width));
+  display: flex;
+  justify-content: center;
+	margin: auto;
+}
+
+.button {
+  position: relative;
+  width: calc(0.8 * var(--width));
+  height: calc(0.7 * var(--height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 0.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0, 0.22, 0.3, 1);
+}
+.button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.button a {
+  color: #fff;
+  font-size: 1rem;
+	text-decoration: none;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+	color: #000000;
+}
+.button._1 {
+  background: #2980b9;
+}
+.button._2 {
+  background: #8e44ad;
+}
+.button._3 {
+  background: #16a085;
+}
+.button._4 {
+  background: #e74c3c;
+}
+.button._5 {
+  background:#62DF37;
+}
+.button._6 {
+  background:#ED49F5;
+}
+.button .back {
+  position: absolute;
+  width: 0;
+  height: 0;
+  filter: url(#filter);
+  border-radius: 50%;
+  z-index: 5;
+  transition: all 2.5s cubic-bezier(0.1, 0.22, 0.3, 1);
+}
+.button._1 .back {
+  left: -100%;
+  top: -100%;
+  background: #27ae60;
+}
+.button._2 .back {
+  right: -100%;
+  top: -100%;
+  background: #c0392b;
+}
+.button._3 .back {
+  left: -100%;
+  bottom: -100%;
+  background: #34495e;
+}
+.button._4 .back {
+  right: -100%;
+  bottom: -100%;
+  background: #2980b9;
+}
+.button._5 .back {
+  right: -100%;
+  bottom: -100%;
+  background:#F8EB0E;
+}
+.button._6 .back {
+  right: -100%;
+  bottom: -100%;
+  background:#10FBF1;
+}
+.button:hover .back {
+  width: calc(4.5 * var(--width));
+  height: calc(4.5 * var(--height));
+}
+
+@media only screen and (max-width: 750px) {
+  .caidan {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: 0.8rem 0;
+  }
+}
+
